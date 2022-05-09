@@ -1,0 +1,46 @@
+# Compiled class file
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.rar
+
+# Build Artifacts
+build
+target
+out
+*.bak
+
+# IDEA artifacts
+*.mvn
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# Eclipse artifacts
+.classpath
+.project
+.settings
+
+# Node artifacts
+node
+node_modules
+
+# Bower
+bower_components
+
+# Common
+*.log
+logs
+.tmp
+.merge_file*
+coverage
+nb-configuration.xml
+src/main/resources/credentials.json
+img
+HELP.md
+mvnw
+mvnw.cmd
+/.idea/
