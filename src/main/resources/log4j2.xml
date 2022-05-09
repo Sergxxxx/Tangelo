@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info">
+
+    <Properties>
+        <Property name="LOG_PATTERN">%d [%t] %p %m%n</Property>
+        <Property name="SIZE">1500 KB</Property>
+        <Property name="MAX_ROLLOVER">5</Property>
+    </Properties>
+
+    <appenders>
+        <RollingFile name="File" fileName="log/logs.log" append="true" filePattern="log/logs%i.log">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${SIZE}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${MAX_ROLLOVER}"/>
+        </RollingFile>
+
+        <Console name="Debug" target="SYSTEM_OUT" follow="true">
+            <LevelRangeFilter minLevel="INFO" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="File"/>
+            <appender-ref ref="Debug"/>
+        </root>
+    </loggers>
+
+</configuration>
